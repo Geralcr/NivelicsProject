@@ -1,10 +1,10 @@
-package com.nivelics.person;
+package com.nivelics.Persona;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PersonApplicationTests {
+class PersonaApplicationTests {
 
 	@Test
 	void contextLoads() {
