@@ -1,7 +1,7 @@
 package com.nivelics.Persona.persistence;
 
 import com.nivelics.Persona.persistence.crud.PersonaJpaRepository;
-import com.nivelics.Persona.persistence.entity.Persona;
+import com.nivelics.Persona.persistence.entity.PersonaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,11 +14,11 @@ public class PersonaRepository {
     @Autowired
     private PersonaJpaRepository personaJpaRepository;
 
-    public List<Persona> getByName(String name){
+    public List<PersonaEntity> getByName(String name){
         return  personaJpaRepository.findByNombre(name);
     }
 
-    public Optional<Persona> getById(int id){
+    public Optional<PersonaEntity> getById(int id){
         return  personaJpaRepository.findById(id);
     }
 
@@ -26,11 +26,11 @@ public class PersonaRepository {
         personaJpaRepository.deleteById(id);
     }
 
-    public Persona savePersona(Persona newPerson){
+    public PersonaEntity savePersona(PersonaEntity newPerson){
         return personaJpaRepository.save(newPerson);
     }
 
-    public void updatePersona(Persona editPerson, int id){
+    public void updatePersona(PersonaEntity editPerson, int id){
         //personaJpaRepository.updatePersona(editPerson, id);
     }
 }

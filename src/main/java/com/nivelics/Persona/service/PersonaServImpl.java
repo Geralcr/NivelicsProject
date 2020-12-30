@@ -1,7 +1,7 @@
-package com.nivelics.Persona.domain.service;
+package com.nivelics.Persona.service;
 
 import com.nivelics.Persona.persistence.PersonaRepository;
-import com.nivelics.Persona.persistence.entity.Persona;
+import com.nivelics.Persona.persistence.entity.PersonaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,20 +9,20 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class PersonaService {
+public class PersonaServImpl implements IPersonaService {
     @Autowired
     private PersonaRepository personaRepository;
 
-    public List<Persona> FindByName(String nombre){
+    public List<PersonaEntity> FindByName(String nombre){
 
         return personaRepository.getByName(nombre);
     }
 
-    public  Persona SavePersona(Persona persona){
-        return personaRepository.savePersona(persona);
+    public PersonaEntity SavePersona(PersonaEntity personaEntity){
+        return personaRepository.savePersona(personaEntity);
     }
 
-    public Optional<Persona> FindById(int id){
+    public Optional<PersonaEntity> FindById(int id){
         return personaRepository.getById(id);
     }
     /*
