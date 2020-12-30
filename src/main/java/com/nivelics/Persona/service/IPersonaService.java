@@ -7,13 +7,13 @@ import java.util.Optional;
 
 public interface IPersonaService {
 
-    public List<PersonaEntity> FindByName(String nombre);
+    List<PersonaEntity> FindByName(String nombre);
 
-    public PersonaEntity SavePersona(PersonaEntity personaEntity);
+    PersonaEntity SavePersona(PersonaEntity personaEntity);
 
-    public Optional<PersonaEntity> FindById(int id);
+    Optional<PersonaEntity> FindById(int id);
 
-    //public  void UpdatePersona (PersonaEntity editPerson, int id);
+    boolean UpdatePersona (PersonaEntity editPerson, int id);
 
-    public boolean DeleteById(int id);
+    boolean DeleteById(int id);
 }

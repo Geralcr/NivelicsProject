@@ -31,6 +31,6 @@ public class PersonaRepository {
     }
 
     public void updatePersona(PersonaEntity editPerson, int id){
-        //personaJpaRepository.updatePersona(editPerson, id);
+        personaJpaRepository.updatePersona(editPerson.getNombre(), editPerson.getEdad(), editPerson.getCelular(), id );
     }
 }

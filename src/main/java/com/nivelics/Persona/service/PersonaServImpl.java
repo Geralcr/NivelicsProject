@@ -25,12 +25,16 @@ public class PersonaServImpl implements IPersonaService {
     public Optional<PersonaEntity> FindById(int id){
         return personaRepository.getById(id);
     }
-    /*
 
-    public  void UpdatePersona (Persona editPerson, int id){
-        personaRepository.updatePersona(editPerson, id);
+
+    public boolean UpdatePersona (PersonaEntity editPerson, int id){
+        return FindById(id).map(persona -> {
+            personaRepository.updatePersona(editPerson, id);
+            return true;
+        }).orElse(false);
+
     }
-*/
+
     public boolean DeleteById(int id){
         return FindById(id).map(persona -> {
             personaRepository.deleteById(id);

@@ -34,4 +34,9 @@ public class PersonaController {
     public boolean deleteById(@PathVariable("id") int id){
         return  personaServImpl.DeleteById(id);
     }
+
+    @PostMapping("/updatePersona/{id}")
+    public boolean updatePersona( @RequestBody PersonaEntity personaEntity, @PathVariable("id") int id){
+        return personaServImpl.UpdatePersona(personaEntity,id);
+    }
 }
